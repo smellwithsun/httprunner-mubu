@@ -31,6 +31,6 @@ class TestmubuLogin(unittest.TestCase):
         }
         data ="phone=13425463649&password=1354350240&remember=true"
         resp = requests.post(url,headers=headers,data=data)
-        resp1 =resp.json()
-        assert resp1["code"] ==0
+        resp2 =resp.json()
+        assert resp2["code"] ==0
         assert resp.status_code ==200
