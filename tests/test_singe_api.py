@@ -14,6 +14,14 @@ class TestSingeApi(unittest.TestCase):
         load_json =load_yaml(singe_api_yaml)
         self.assertEqual(load_json["url"],"https://mubu.com/")
     def test_run_singe_yaml(self):
+        singe_api_yaml = os.path.join(os.path.dirname(__file__), "api", "get_login.yaml")
+        result = run_yaml(singe_api_yaml)
+        self.assertEqual(result,True)
+
         singe_api_yaml = os.path.join(os.path.dirname(__file__), "api", "get_homepage.yaml")
-        resp = run_yaml(singe_api_yaml)
-        self.assertEqual(resp.status_code,200)
+        result = run_yaml(singe_api_yaml)
+        self.assertEqual(result, True)
+
+        singe_api_yaml = os.path.join(os.path.dirname(__file__), "api", "get_login_submit.yaml")
+        result = run_yaml(singe_api_yaml)
+        self.assertEqual(result, True)
