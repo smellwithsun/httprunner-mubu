@@ -12,7 +12,7 @@ class TestSingeApi(unittest.TestCase):
         #相对路径
         singe_api_yaml =os.path.join(os.path.dirname(__file__),"api","get_homepage.yaml")
         load_json =load_yaml(singe_api_yaml)
-        self.assertEqual(load_json["url"],"https://mubu.com/")
+        self.assertEqual(load_json["request"]["url"],"https://mubu.com/")
     def test_run_singe_yaml(self):
         singe_api_yaml = os.path.join(os.path.dirname(__file__), "api", "get_login.yaml")
         result = run_yaml(singe_api_yaml)
