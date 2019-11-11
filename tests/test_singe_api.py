@@ -21,7 +21,7 @@ class TestSingeApi(unittest.TestCase):
         singe_api_yaml = os.path.join(os.path.dirname(__file__), "api", "get_homepage.yaml")
         result = run_yaml(singe_api_yaml)
         self.assertEqual(result, True)
-
+    def test_run_single_jsonpath(self):
         singe_api_yaml = os.path.join(os.path.dirname(__file__), "api", "get_login_submit.yaml")
         result = run_yaml(singe_api_yaml)
         self.assertEqual(result, True)

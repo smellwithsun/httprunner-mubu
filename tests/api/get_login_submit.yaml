@@ -7,3 +7,4 @@ request:
       "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
 validate:
     status_code: 200
+    $.code: 0
