@@ -1,4 +1,3 @@
-
 sudo: false
 language: python
 python:
@@ -14,4 +13,5 @@ install:
   - pip install poetry
   - poetry install -vvv
 script:
-  - python -m unittest discover
+  - coverage run --source=test_mubu_login -m unittest discover
+  - coverage report
