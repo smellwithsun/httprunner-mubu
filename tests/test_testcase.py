@@ -19,4 +19,4 @@ class TestSingeApi(unittest.TestCase):
     def test_run_yaml_yaml(self):
         testcase_api_yaml = os.path.join(os.path.dirname(__file__), "testcase", "mubu_login.yaml")
         r= run_yaml(testcase_api_yaml)
-        self.assertEqual(len(r),3)
+        self.assertEqual(len(r),4)

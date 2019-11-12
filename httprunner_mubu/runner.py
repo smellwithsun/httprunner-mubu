@@ -1,10 +1,10 @@
 import requests
 import jsonpath
-
+from requests import sessions
 from httprunner_mubu.load import load_yaml
 from httprunner_mubu.validate import is_api, is_testcase
-
-
+session = sessions.Session()
+#requests默认每次发起请求都会发起一次session，所以需要session共享
 def extact_json_field(resp,json_field):
     value =jsonpath.jsonpath(resp.json(),json_field)
     return value[0]
@@ -15,7 +15,7 @@ def run_api(api_info):
 
     method = request.pop("method")
     url = request.pop("url")
-    resp = requests.request(method, url, **request)
+    resp = session.request(method, url, **request)
 
     validator_mapping = api_info["validate"]
 
