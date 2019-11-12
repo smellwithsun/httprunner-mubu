@@ -1,7 +1,7 @@
 import os
 import unittest
 from httprunner_mubu.load import load_yaml
-from httprunner_mubu.runner import run_yaml
+from httprunner_mubu.runner import  run_yaml
 
 
 class TestSingeApi(unittest.TestCase):
@@ -16,12 +16,12 @@ class TestSingeApi(unittest.TestCase):
     def test_run_singe_yaml(self):
         singe_api_yaml = os.path.join(os.path.dirname(__file__), "api", "get_login.yaml")
         result = run_yaml(singe_api_yaml)
-        self.assertEqual(result,True)
+        self.assertEqual(result[0],True)
 
         singe_api_yaml = os.path.join(os.path.dirname(__file__), "api", "get_homepage.yaml")
         result = run_yaml(singe_api_yaml)
-        self.assertEqual(result, True)
+        self.assertEqual(result[0], True)
     def test_run_single_jsonpath(self):
         singe_api_yaml = os.path.join(os.path.dirname(__file__), "api", "get_login_submit.yaml")
         result = run_yaml(singe_api_yaml)
-        self.assertEqual(result, True)
+        self.assertEqual(result[0], True)
